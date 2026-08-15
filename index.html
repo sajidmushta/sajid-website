@@ -100,7 +100,33 @@
             nav a {
                 margin: 0 6px;
             }
-        }
+        }.payment-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.payment-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
     </style>
 </head>
 
@@ -130,10 +156,34 @@
             کام اور رابطے کی تفصیلات شامل کر سکتا ہوں۔
         </p>
     </section>
+<section id="payments">
+  <h2>Deposit / Withdraw</h2>
+  <p>اپنی مطلوبہ سروس منتخب کریں:</p>
 
+  <a href="#" class="button">Deposit</a>
+  <a href="#" class="button">Withdraw</a>
+</section><section class="payments" id="payments">
+    <h2>Deposit / Withdraw</h2>
+    <p>اپنی مطلوبہ سروس منتخب کریں:</p>
+
+    <div class="payment-form">
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="withdraw()">Withdraw</button>
+    </div>
+</section>
     <footer id="contact">
         <p>© 2026 Sajid Website — All Rights Reserved</p>
     </footer>
 
+
+  <script>
+function deposit() {
+    alert("Deposit option selected");
+}
+
+function withdraw() {
+    alert("Withdraw option selected");
+}
+  </script>
 </body>
 </html>
