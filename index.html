@@ -167,8 +167,27 @@
     <p>اپنی مطلوبہ سروس منتخب کریں:</p>
 
     <div class="payment-form">
-        <button onclick="deposit()">Deposit</button>
-        <button onclick="withdraw()">Withdraw</button>
+
+    <label>Service</label>
+    <select id="service">
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+    </select>
+
+    <label>Payment Method</label>
+    <select id="method">
+        <option value="jazzcash">JazzCash</option>
+        <option value="easypaisa">Easypaisa</option>
+    </select>
+
+    <label>Amount (PKR)</label>
+    <input type="number" id="amount" placeholder="Enter amount">
+
+    <label>Mobile Number</label>
+    <input type="tel" id="mobile" placeholder="03XXXXXXXXX">
+
+    <button onclick="submitPayment()">Continue</button>
+
     </div>
 </section>
     <footer id="contact">
@@ -177,11 +196,26 @@
 
 
   <script>
-function deposit() {
-    alert("Deposit option selected");
-}
+function submitPayment() {
+    var service = document.getElementById("service").value;
+    var method = document.getElementById("method").value;
+    var amount = document.getElementById("amount").value;
+    var mobile = document.getElementById("mobile").value;
 
-function withdraw() {
+    if (amount === "" || mobile === "") {
+        alert("براہ کرم رقم اور موبائل نمبر درج کریں۔");
+        return;
+    }
+
+    alert(
+        "Service: " + service +
+        "\nMethod: " + method +
+        "\nAmount: Rs " + amount +
+        "\nMobile: " + mobile +
+        "\n\nRequest submitted!"
+    );
+}
+  </script>
     alert("Withdraw option selected");
 }
   </script>
